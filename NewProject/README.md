@@ -48,10 +48,6 @@ We avoid using Generative LLMs (like GPT) for the structure to prevent hallucina
 * Python 3.8+
 * GPU recommended (automatically detected in code)
 
-### Installation
-```bash
-pip install torch transformers scipy numpy
-
 
 # 📄 Interview Question Answers – Technical Summary
 
