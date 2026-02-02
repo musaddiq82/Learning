@@ -1,0 +1,48 @@
+Module: Trending Page (The Market)
+Core Philosophy: The Trending Page functions as a Marketplace of Success. Unlike standard social media that tracks popularity (Likes), this module tracks Economic Velocity (Revenue). It answers the user's question: "Who is making money right now, and how?"
+
+1. Section: Top Earners Leaderboard ("The Rich List")
+Description: A ranked list of creators who have generated the highest revenue on the platform within the current cycle.
+
+Data Source: Aggregation of all incoming transactions (Tips + Gifts) per user_id.
+
+Time Window: Rolling 24-hours (or resets daily at 00:00 UTC).
+
+Ranking Logic: ORDER BY total_revenue_24h DESC.
+
+Purpose:
+
+For Creators: Gamifies earning. Creators push their audience to tip them specifically to climb this leaderboard for visibility.
+
+For Viewers: Acts as a discovery tool to find high-status, successful creators.
+
+2. Section: High-Value Content Feed ("The Money Stream")
+Description: The primary feed of content on the Trending page. It displays posts that are currently generating significant revenue, not just views.
+
+Ranking Algorithm: The feed uses a Revenue Velocity Score, not a raw Like count.
+
+Formula: Score = (Total_Tips_Last_Hour * 2) + (Total_Likes_Last_Hour / 100)
+
+Decay: Older posts (12h+) are heavily penalized to ensure the feed always looks fresh and active.
+
+Filtering: Users can filter this feed by category (e.g., Tech, Finance, Art) to see which specific niches are most profitable right now.
+
+Purpose: Educational and aspirational. It teaches users what type of content is currently monetizable, encouraging them to replicate that success.
+
+3. Section: Top Supporters ("The Whale List")
+Description: A secondary leaderboard highlighting the users who have spent or gifted the most money on the platform recently.
+
+Data Source: Aggregation of all outgoing transactions per user_id.
+
+Ranking Logic: ORDER BY total_spent_24h DESC.
+
+Purpose:
+
+Validation: Provides status and recognition to the wealthy users who fund the ecosystem.
+
+Networking: Signals to creators who the "high-value" followers are, prompting creators to engage with them.
+
+4. Integration with Home Feed
+The "Teaser" Mechanism: The #1 ranked post from the High-Value Content Feed is automatically injected into the user's Home Feed (at position #7 or #10).
+
+Labeling: This injected post is tagged as "Currently #1 on Trending" to induce FOMO (Fear Of Missing Out) and drive traffic from the passive Home Feed to the active Trending Page.
